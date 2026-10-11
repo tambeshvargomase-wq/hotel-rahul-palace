@@ -1,0 +1,754 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, sans-serif;
+background: #080808;
+color: white;
+}
+
+/* PREMIUM NAVBAR */
+
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+min-height: 82px;
+padding: 15px 6%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 1000;
+background: rgba(0, 0, 0, 0.45);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.logo {
+font-size: 15px;
+letter-spacing: 3px;
+color: #d8b56a;
+}
+
+.logo span {
+display: block;
+color: white;
+font-size: 18px;
+margin-top: 4px;
+}
+
+.navbar nav {
+display: flex;
+gap: 30px;
+}
+
+.navbar nav a {
+color: white;
+text-decoration: none;
+font-size: 14px;
+transition: 0.3s;
+}
+
+.navbar nav a:hover {
+color: #d8b56a;
+}
+
+.book-btn {
+padding: 12px 22px;
+border: 1px solid #d8b56a;
+color: #d8b56a;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.book-btn:hover {
+background: #d8b56a;
+color: black;
+}
+
+/* HERO SECTION */
+
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+background:
+linear-gradient(
+rgba(0,0,0,0.48),
+rgba(0,0,0,0.72)
+),
+url("hotel.jpg");
+background-size: cover;
+background-position: center;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(
+circle at center,
+transparent 20%,
+rgba(0,0,0,0.55) 100%
+);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 900px;
+padding: 20px;
+animation: heroShow 1.5s ease;
+}
+
+.small-title {
+color: #d8b56a;
+letter-spacing: 6px;
+font-size: 13px;
+margin-bottom: 25px;
+}
+
+.hero h1 {
+font-family: Georgia, serif;
+font-size: clamp(48px, 8vw, 100px);
+font-weight: 400;
+line-height: 1;
+margin-bottom: 25px;
+text-shadow: 0 5px 25px rgba(0,0,0,0.8);
+}
+
+.hero p:not(.small-title) {
+font-size: 18px;
+color: #e5e5e5;
+letter-spacing: 1px;
+margin-bottom: 40px;
+}
+
+.hero-buttons {
+display: flex;
+justify-content: center;
+gap: 18px;
+flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+padding: 16px 32px;
+text-decoration: none;
+font-size: 14px;
+letter-spacing: 1px;
+transition: 0.35s;
+}
+
+.primary-btn {
+background: #d8b56a;
+color: #080808;
+}
+
+.primary-btn:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 30px rgba(216,181,106,0.35);
+}
+
+.secondary-btn {
+border: 1px solid white;
+color: white;
+}
+
+.secondary-btn:hover {
+background: white;
+color: black;
+}
+
+/* WELCOME SECTION */
+
+.welcome {
+padding: 120px 8%;
+text-align: center;
+background: #0c0c0c;
+}
+
+.section-label {
+color: #d8b56a;
+letter-spacing: 4px;
+font-size: 12px;
+margin-bottom: 18px;
+}
+
+.welcome h2,
+.rooms h2,
+.gallery h2,
+.booking h2,
+.contact h2 {
+font-family: Georgia, serif;
+font-size: 48px;
+font-weight: 400;
+}
+
+.welcome-text {
+max-width: 650px;
+margin: 25px auto;
+color: #aaa;
+line-height: 1.8;
+}
+
+/* ROOMS SECTION */
+
+.rooms {
+padding: 110px 7%;
+text-align: center;
+}
+
+.room-container {
+margin-top: 55px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.room-card {
+background: #111;
+overflow: hidden;
+border: 1px solid rgba(255,255,255,0.08);
+transition: 0.4s;
+}
+
+.room-card:hover {
+transform: translateY(-10px);
+border-color: #d8b56a;
+}
+
+.room-image {
+height: 260px;
+background-size: cover;
+background-position: center;
+}
+
+.room-one {
+background-image: url("room1.jpg");
+}
+
+.room-two {
+background-image: url("room2.jpg");
+}
+
+.room-three {
+background-image: url("room3.jpg");
+}
+
+.room-info {
+padding: 28px;
+text-align: left;
+}
+
+.room-info h3 {
+font-family: Georgia, serif;
+font-size: 26px;
+}
+
+.room-info p {
+color: #999;
+margin: 12px 0 20px;
+}
+
+.room-info strong {
+display: block;
+color: #d8b56a;
+margin-bottom: 20px;
+}
+
+.room-info a {
+color: white;
+text-decoration: none;
+border-bottom: 1px solid #d8b56a;
+padding-bottom: 5px;
+}
+
+/* DINING SECTION */
+
+.dining {
+min-height: 600px;
+display: flex;
+align-items: center;
+padding: 80px 8%;
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,0.85),
+rgba(0,0,0,0.25)
+),
+url("dining.jpg");
+background-size: cover;
+background-position: center;
+}
+
+.dining-content {
+max-width: 550px;
+}
+
+.dining h2 {
+font-family: Georgia, serif;
+font-size: 58px;
+font-weight: 400;
+margin-bottom: 20px;
+}
+
+.dining p {
+color: #ccc;
+line-height: 1.8;
+margin-bottom: 30px;
+}
+
+/* GALLERY SECTION */
+
+.gallery {
+padding: 110px 7%;
+text-align: center;
+}
+
+.gallery-grid {
+margin-top: 50px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+}.gallery-box {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(216,181,106,0.4);
+    background: #222;
+    transition: 0.4s;
+}
+
+.gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-box h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 8px;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.gallery-box:hover {
+    transform: translateY(-5px);
+    border-color: #d8b56a;
+}
+
+.gallery-box:hover img {
+    transform: scale(1.08);
+}
+
+
+
+/* BOOKING SECTION */
+
+.booking {
+padding: 110px 8%;
+text-align: center;
+background: #101010;
+}
+
+background-image: linear-gradient(
+    rgba(10, 15, 30, 0.65),
+    rgba(10, 15, 30, 0.75)
+), url("./room1.jpg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+.booking form {
+max-width: 700px;
+margin: 45px auto 0;
+display: grid;
+gap: 15px;
+}
+
+.booking input,
+.booking select,
+.booking textarea {
+width: 100%;
+padding: 17px;
+background: #181818;
+border: 1px solid #333;
+color: white;
+font: inherit;
+}
+
+.booking textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.booking button {
+padding: 17px;
+background: #d8b56a;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.booking button:hover {
+background: white;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+padding: 110px 8%;
+text-align: center;
+}
+
+.contact p {
+margin: 15px;
+color: #bbb;
+}
+
+.contact-buttons {
+margin-top: 30px;
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.contact-buttons a {
+padding: 14px 25px;
+text-decoration: none;
+border: 1px solid #d8b56a;
+color: #d8b56a;
+transition: 0.3s;
+}
+
+.contact-buttons a:hover {
+background: #d8b56a;
+color: black;
+}
+
+/* FOOTER */
+
+footer {
+padding: 50px 20px;
+text-align: center;
+background: #050505;
+border-top: 1px solid #222;
+}
+
+footer h2 {
+color: #d8b56a;
+letter-spacing: 3px;
+}
+
+footer p {
+color: #777;
+margin-top: 12px;
+}
+
+/* HERO ANIMATION */
+
+@keyframes heroShow {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 800px) {
+.navbar {
+padding: 15px 20px;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.book-btn {
+    padding: 9px 14px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.room-container {
+    grid-template-columns: 1fr;
+}
+
+.gallery-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.welcome h2,
+.rooms h2,
+.gallery h2,
+.booking h2,
+.contact h2 {
+    font-size: 38px;
+}
+
+.dining h2 {
+    font-size: 42px;
+}
+
+}
+
+@media (max-width: 480px) {
+.logo {
+font-size: 12px;
+}
+
+.logo span {
+    font-size: 15px;
+}
+
+.navbar nav {
+    gap: 12px;
+}
+
+.navbar nav a {
+    font-size: 12px;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.small-title {
+    letter-spacing: 3px;
+}
+
+.hero p:not(.small-title) {
+    font-size: 16px;
+}
+
+.gallery-grid {
+    grid-template-columns: 1fr;
+}
+
+.gallery-box {
+    height: 220px;
+}
+
+}
+
+/* ===== HOTEL DOOR INTRO ===== */
+
+#welcome-screen {
+position: fixed;
+inset: 0;
+z-index: 99999;
+overflow: hidden;
+background: transparent;
+pointer-events: none;
+animation: hideIntro 0.1s 5.2s forwards;
+display: none;
+pointer-events: none;l
+}
+
+/* LEFT DOOR */
+
+#welcome-screen::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 50%;
+height: 100%;
+background: linear-gradient(
+90deg,
+#0b0704,
+#4a2c16,
+#211207,
+#4a2c16,
+#0b0704
+);
+box-shadow: inset -8px 0 20px rgba(0,0,0,0.8);
+animation: doorLeft 3.5s ease-in-out forwards;
+}
+
+/* RIGHT DOOR */
+
+#welcome-screen::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+width: 50%;
+height: 100%;
+background: linear-gradient(
+90deg,
+#0b0704,
+#4a2c16,
+#211207,
+#4a2c16,
+#0b0704
+);
+box-shadow: inset 8px 0 20px rgba(0,0,0,0.8);
+animation: doorRight 3.5s ease-in-out forwards;
+}
+
+/* INTRO TEXT */
+
+.welcome-content {
+position: absolute;
+z-index: 5;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 90%;
+text-align: center;
+color: white;
+}
+
+/* WELCOME TO */
+
+.welcome-content p {
+color: #d8b56a;
+letter-spacing: 6px;
+font-size: 13px;
+animation: welcomeOnly 2.5s ease forwards;
+}
+
+/* HOTEL NAME */
+
+.welcome-content h1 {
+margin: 18px 0;
+font-family: Georgia, serif;
+font-size: clamp(38px, 7vw, 80px);
+font-weight: 400;
+opacity: 0;
+animation: hotelNameShow 5s ease forwards;
+}
+
+/* TAGLINE */
+
+.welcome-content span {
+color: #ddd;
+letter-spacing: 3px;
+font-size: 14px;
+opacity: 0;
+animation: hotelNameShow 5s ease forwards;
+}
+
+/* DOORS OPEN */
+
+@keyframes doorLeft {
+0%, 35% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+
+@keyframes doorRight {
+0%, 35% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(100%);
+}
+}
+
+/* WELCOME TO DISAPPEARS */
+
+@keyframes welcomeOnly {
+0%, 40% {
+opacity: 1;
+}
+60%, 100% {
+opacity: 0;
+}
+}
+
+/* HOTEL NAME APPEARS */
+
+@keyframes hotelNameShow {
+0%, 60% {
+opacity: 0;
+}
+75%, 100% {
+opacity: 1;
+}
+}
+
+/* INTRO DISAPPEARS; MAIN WEBSITE REMAINS */
+
+@keyframes hideIntro {
+to {
+visibility: hidden;
+opacity: 0;
+}
+}
+
+.booking {
+    background-image:
+        linear-gradient(rgba(10, 15, 30, 0.45), rgba(10, 15, 30, 0.65)),
+        url("./room1.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.booking {
+    background-image:
+        linear-gradient(rgba(10, 15, 30, 0.45), rgba(10, 15, 30, 0.65)),
+        url("./room1.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.booking form {
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 30px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+}
+
+.booking form input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px !important;
+}
+
+.booking form button {
+    width: 100% !important;
+}
